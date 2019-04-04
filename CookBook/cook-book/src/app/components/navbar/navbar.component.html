@@ -1,7 +1,16 @@
-<mat-toolbar color="warn">
-  <mat-toolbar-row>
-    <button mat-flat-button color="warn">
-      <strong>Home</strong>
+<mat-toolbar class="container">
+  <div>
+    <h1 class="mat-display-1">Mom's Cookbook</h1>
+  </div>
+  <div>
+    <button mat-button routerLink="/">
+      Home
     </button>
-  </mat-toolbar-row>
+    <button mat-button routerLink="user/login">
+      Login
+    </button>
+    <button mat-button routerLink="user/register">
+      Register
+    </button>
+  </div>
 </mat-toolbar>
