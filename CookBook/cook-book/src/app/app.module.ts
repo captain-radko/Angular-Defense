@@ -6,7 +6,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 // app imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// module imports
 import { MaterialModule } from "./modules/material.module";
+import { FormsModule } from '@angular/forms';
 
 // component imports
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -16,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { UserComponent } from './components/users/user/user.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +30,15 @@ import { UserComponent } from './components/users/user/user.component';
     FooterComponent,
     RegisterComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
