@@ -1,9 +1,14 @@
 .section-padding {
-	padding: 60px 0;
+    padding: 5px 0;
+    width: 100%;
 }
 
 .bottom {
     background-color: #2e7d32;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .bottom .copyright {
@@ -22,6 +27,6 @@
     color: #d1caca;
 }
 
-div .copyright{
+div .copyright {
     text-align: center;
 }

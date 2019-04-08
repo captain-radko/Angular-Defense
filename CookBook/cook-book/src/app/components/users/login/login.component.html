@@ -1,8 +1,16 @@
 <div class="login-form">
-  <mat-form-field class="login-full-width">
-    <input matInput placeholder="Email" >
-  </mat-form-field>
-  <mat-form-field class="login-full-width">
-    <input matInput placeholder="Password" >
-  </mat-form-field>
+  <form action="">
+    <mat-toolbar-row class="toolbar">
+      <h1 class="mat-typography">Login</h1>
+    </mat-toolbar-row>
+    <mat-card>
+      <mat-form-field class="login-full-width">
+        <input matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field class="login-full-width">
+        <input matInput placeholder="Password">
+      </mat-form-field>
+      <button type="submit" mat-button class="login">Log in</button>
+    </mat-card>
+  </form>
 </div>
