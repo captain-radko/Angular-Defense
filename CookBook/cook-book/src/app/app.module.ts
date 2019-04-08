@@ -20,6 +20,7 @@ import { RegisterComponent } from './components/users/register/register.componen
 import { LoginComponent } from './components/users/login/login.component';
 import { UserComponent } from './components/users/user/user.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RegisterComponent,
     LoginComponent,
     UserComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,

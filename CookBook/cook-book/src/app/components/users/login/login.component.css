@@ -21,6 +21,20 @@
   color: white
 }
 
-h1{
+.register {
+  background-color: white;
+  color: black;
+}
+
+h1 {
   font-size: 200%;
+}
+
+mat-card-actions {
+  align-content: center;
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }

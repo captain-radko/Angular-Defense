@@ -1,0 +1,7 @@
+.latest {
+    margin-top: 2%;
+    text-align: center;
+    color: #66bb6a;
+    font-size: 300%;
+    text-shadow: -1px -1px 0 #2e7d32, 1px -1px 0 #2e7d32, -1px 1px 0 #2e7d32, 1px 1px 0 #2e7d32;
+}

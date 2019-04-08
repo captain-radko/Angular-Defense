@@ -10,7 +10,10 @@
       <mat-form-field class="login-full-width">
         <input matInput placeholder="Password">
       </mat-form-field>
-      <button type="submit" mat-button class="login">Log in</button>
+      <mat-card-actions class="justify">
+          <button type="submit" mat-button class="login">Login</button>
+        </mat-card-actions>
+        <p>Don't have an account? <button class="register" mat-button routerLink="/user/register">Register</button></p>
     </mat-card>
   </form>
 </div>
