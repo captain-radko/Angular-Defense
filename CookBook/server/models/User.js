@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.String,
     required: true
   },
-  username: {
+  name: {
     type: mongoose.Schema.Types.String,
     required: true
   },

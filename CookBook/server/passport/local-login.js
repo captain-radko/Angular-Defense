@@ -4,7 +4,7 @@ const User = require('../models/User');
 const encryption = require('../util/encryption');
 
 module.exports = new PassportLocalStrategy({
-  usernameField: 'name',
+  usernameField: 'email',
   passwordField: 'password',
   session: false,
   passReqToCallback: true
