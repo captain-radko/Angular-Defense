@@ -9,6 +9,7 @@ import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
     ]
   },
   { path: "recipes", component: RecipeComponent },
+  { path: "details/:id", component: RecipeDetailsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

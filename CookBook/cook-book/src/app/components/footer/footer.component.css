@@ -5,10 +5,11 @@
 
 .bottom {
     background-color: #2e7d32;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    position: static;
+    margin: 10px auto;
 }
 
 .bottom .copyright {

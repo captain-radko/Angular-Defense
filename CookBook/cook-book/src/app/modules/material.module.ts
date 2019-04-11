@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
 
 import {
     MatButtonModule,
@@ -10,11 +11,9 @@ import {
     MatGridListModule,
     MatIconModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule
 } from '@angular/material';
-
-import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
-
 
 @NgModule({
     imports: [
@@ -28,7 +27,8 @@ import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
         MatJumbotronModule,
         MatIconModule,
         MatInputModule,
-        MatTabsModule
+        MatTabsModule,
+        MatListModule
     ],
     exports: [
         MatButtonModule,
@@ -41,7 +41,8 @@ import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
         MatJumbotronModule,
         MatIconModule,
         MatInputModule,
-        MatTabsModule
+        MatTabsModule,
+        MatListModule
     ],
 })
 

@@ -1,13 +1,9 @@
-.center{
+.center {
     text-align: center;
     margin: 14% auto;
 }
 
 h1 {
     color: #66bb6a;
-    text-shadow:
-     -1px -1px 0 #2e7d32,  
-      1px -1px 0 #2e7d32,
-      -1px 1px 0 #2e7d32,
-       1px 1px 0 #2e7d32;
-  }
+    text-shadow: -1px -1px 0 #2e7d32, 1px -1px 0 #2e7d32, -1px 1px 0 #2e7d32, 1px 1px 0 #2e7d32;
+}

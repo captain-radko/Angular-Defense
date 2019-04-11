@@ -1,0 +1,30 @@
+.img {
+    margin: 15px auto;
+    justify-content: right;
+}
+
+.content {
+    justify-content: left;
+    text-align: left;
+}
+
+.recipe {
+    width: 58%;
+    height: 80%;
+    margin: auto;
+    overflow-wrap: break-word;
+    font-size: 150%;
+    text-align: center;
+}
+
+.card {
+    height: 500px;
+}
+
+.justify {
+    justify-content: left;
+}
+
+mat-list {
+    width: 50%;
+}
