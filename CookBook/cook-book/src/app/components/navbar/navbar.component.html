@@ -6,22 +6,22 @@
     <button mat-button routerLink="/">
       Home
     </button>
-    <button mat-button routerLink="recipes">
+    <button *ngIf="authService.isAuthenticated()" mat-button routerLink="recipes">
       Recipes
     </button>
-    <button mat-button routerLink="add">
+    <button *ngIf="authService.isAuthenticated()" mat-button routerLink="add">
       Add
     </button>
-    <button mat-button routerLink="user/login">
+    <button *ngIf="!authService.isAuthenticated()" mat-button routerLink="user/login">
       Login
     </button>
-    <button mat-button routerLink="user/register">
+    <button *ngIf="!authService.isAuthenticated()" mat-button routerLink="user/register">
       Register
     </button>
     <button mat-button routerLink="about">
       About
     </button>
-    <button mat-button routerLink="logout">
+    <button *ngIf="authService.isAuthenticated()" (click)="logout()" mat-button routerLink="logout">
       Logout
     </button>
   </div>

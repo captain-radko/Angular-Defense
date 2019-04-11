@@ -1,19 +1,19 @@
 <div class="login-form">
-  <form action="">
+  <form #loginForm="ngForm" (ngSubmit)="signIn()">
     <mat-toolbar-row class="toolbar">
       <h1 class="mat-typography">Login</h1>
     </mat-toolbar-row>
     <mat-card>
       <mat-form-field class="login-full-width">
-        <input matInput placeholder="Email">
+        <input matInput ngModel id="email" name="email" placeholder="Email">
       </mat-form-field>
       <mat-form-field class="login-full-width">
-        <input matInput placeholder="Password">
+        <input matInput ngModel id="password" name="password" type="password" placeholder="Password">
       </mat-form-field>
       <mat-card-actions class="justify">
-          <button type="submit" mat-button class="login">Login</button>
-        </mat-card-actions>
-        <p>Don't have an account? <button class="register" mat-button routerLink="/user/register">Register</button></p>
+        <button type="submit" mat-button class="login">Login</button>
+      </mat-card-actions>
+      <p>Don't have an account? <button class="register" mat-button routerLink="/user/register">Register</button></p>
     </mat-card>
   </form>
 </div>

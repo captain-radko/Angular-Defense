@@ -19,9 +19,9 @@ function validateSignupForm (payload) {
     errors.password = 'Password must have at least 4 characters.'
   }
 
-  if (!payload || typeof payload.username !== 'string' || payload.username.trim().length === 0) {
+  if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
     isFormValid = false
-    errors.username = 'Please provide your username.'
+    errors.name = 'Please provide your name.'
   }
 
   if (!isFormValid) {
@@ -61,7 +61,7 @@ function validateLoginForm (payload) {
   }
 }
 
-router.post('/register', (req, res, next) => {
+router.post('/user/register', (req, res, next) => {
   const validationResult = validateSignupForm(req.body)
   if (!validationResult.success) {
     return res.status(401).json({
@@ -86,7 +86,7 @@ router.post('/register', (req, res, next) => {
   })(req, res, next)
 })
 
-router.post('/login', (req, res, next) => {
+router.post('/user/login', (req, res, next) => {
   const validationResult = validateLoginForm(req.body)
   if (!validationResult.success) {
     return res.status(401).json({
@@ -98,7 +98,7 @@ router.post('/login', (req, res, next) => {
 
   return passport.authenticate('local-login', (err, token, userData) => {
     if (err) {
-      if (err.username === 'IncorrectCredentialsError') {
+      if (err.name === 'IncorrectCredentialsError') {
         console.log('Invalid credentials');
         return res.status(401).json({
           success: false,

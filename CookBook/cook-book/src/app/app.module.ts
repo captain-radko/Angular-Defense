@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from "./modules/material.module";
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from "ngx-toastr";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // component imports
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -23,6 +24,10 @@ import { UserComponent } from './components/users/user/user.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+
+// services imports
+import { AuthService } from './services/auth.service';
+import { JwtInterceptorService } from './services/jwt-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +49,17 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
