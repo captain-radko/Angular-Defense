@@ -14,7 +14,8 @@
         <input matInput ngModel name="ingredients" id="ingredients" placeholder="Ingredients">
       </mat-form-field>
       <mat-form-field class="create-full-width">
-        <input matInput name="recipeText" id="recipeText" placeholder="Recipe">
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="20" name="recipeText" id="recipeText" placeholder="Recipe"></textarea>
       </mat-form-field>
       <mat-card-actions class="justify">
         <button type="submit" mat-button class="create">Add</button>

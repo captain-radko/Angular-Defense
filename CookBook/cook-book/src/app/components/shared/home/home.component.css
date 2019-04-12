@@ -5,3 +5,7 @@
     font-size: 300%;
     text-shadow: -1px -1px 0 #2e7d32, 1px -1px 0 #2e7d32, -1px 1px 0 #2e7d32, 1px 1px 0 #2e7d32;
 }
+
+mat-grid-list{
+    margin: auto auto 13%;
+}

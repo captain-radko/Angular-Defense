@@ -1,9 +1,15 @@
 .login-form {
-  margin: 5% auto;
+  margin: 5% auto 18%;
   width: 40%;
   padding: 10px;
   min-width: 150px;
   max-width: 500px;
+}
+
+@media(max-width:1200px) {
+  .login-form {
+    margin: 18% auto;
+  }
 }
 
 .login-full-width {
