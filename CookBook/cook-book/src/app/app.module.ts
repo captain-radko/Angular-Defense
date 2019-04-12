@@ -14,20 +14,20 @@ import { ToastrModule } from "ngx-toastr";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // component imports
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { RecipeCardComponent } from './components/recipes/recipe-card/recipe-card.component';
+import { HomeComponent } from './components/shared/home/home.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { UserComponent } from './components/users/user/user.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { RecipeComponent } from './components/recipe/recipe.component';
-import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+import { RecipeComponent } from './components/recipes/recipe/recipe.component';
+import { RecipeDetailsComponent } from './components/recipes/recipe-details/recipe-details.component';
 
 // services imports
 import { AuthService } from './services/auth.service';
-import { JwtInterceptorService } from './services/jwt-interceptor.service';
+import { JwtInterceptorService } from './services/interceptors/jwt-interceptor.service';
 
 @NgModule({
   declarations: [
