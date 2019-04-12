@@ -28,6 +28,8 @@ import { RecipeDetailsComponent } from './components/recipes/recipe-details/reci
 // services imports
 import { AuthService } from './services/auth.service';
 import { JwtInterceptorService } from './services/interceptors/jwt-interceptor.service';
+import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
+import { AllRecipesComponent } from './components/recipes/all-recipes/all-recipes.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { JwtInterceptorService } from './services/interceptors/jwt-interceptor.s
     UserComponent,
     NotFoundComponent,
     RecipeComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    AddRecipeComponent,
+    AllRecipesComponent
   ],
   imports: [
     BrowserModule,

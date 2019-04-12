@@ -11,6 +11,8 @@ import { NotFoundComponent } from './components/shared/not-found/not-found.compo
 import { RecipeComponent } from './components/recipes/recipe/recipe.component';
 import { RecipeDetailsComponent } from './components/recipes/recipe-details/recipe-details.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
+import { AllRecipesComponent } from './components/recipes/all-recipes/all-recipes.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", component: HomeComponent },
@@ -20,7 +22,12 @@ const routes: Routes = [
       { path: "register", component: RegisterComponent }
     ]
   },
-  { path: "recipes", component: RecipeComponent, canActivate: [AuthGuard] },
+  {
+    path: "all", component: AllRecipesComponent, canActivate: [AuthGuard], children: [
+      { path: "recipes", component: RecipeComponent },
+      { path: "add", component: AddRecipeComponent }
+    ]
+  },
   { path: "details/:id", component: RecipeDetailsComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];

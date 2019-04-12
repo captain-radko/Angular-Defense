@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const recipeSchema = new mongoose.Schema({
+    image: {
+        type: mongoose.Schema.Types.String,
+        required: true
+    },
     title: {
         type: mongoose.Schema.Types.String,
         required: true
@@ -13,6 +17,10 @@ const recipeSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.String,
         required: true
     },
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 });
 
 const Recipe = mongoose.model('Recipe', recipeSchema);

@@ -1,0 +1,35 @@
+.create-form {
+    margin: 5% auto;
+    width: 40%;
+    padding: 10px;
+    min-width: 150px;
+    max-width: 500px;
+}
+
+.create-full-width {
+    width: 100%;
+}
+
+.toolbar {
+    justify-content: center;
+    background-color: #2e7d32;
+    color: white
+}
+
+.create {
+    background-color: #2e7d32;
+    color: white;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+p {
+    text-align: center;
+}
+
+mat-card-actions {
+    align-content: center;
+    text-align: center;
+}

@@ -6,10 +6,10 @@
     <button mat-button routerLink="/">
       Home
     </button>
-    <button *ngIf="authService.isAuthenticated()" mat-button routerLink="recipes">
+    <button *ngIf="authService.isAuthenticated()" mat-button routerLink="all/recipes">
       Recipes
     </button>
-    <button *ngIf="authService.isAuthenticated()" mat-button routerLink="add">
+    <button *ngIf="authService.isAuthenticated()" mat-button routerLink="all/add">
       Add
     </button>
     <button *ngIf="!authService.isAuthenticated()" mat-button routerLink="user/login">
