@@ -1,3 +1,25 @@
-mat-tab-group{
+mat-tab-group {
     margin: auto auto 15% auto;
+}
+
+.card {
+    max-width: 320px;
+}
+
+mat-card-subtitle {
+    color: black;
+}
+
+mat-card {
+    background-color: white;
+    color: black;
+}
+
+a {
+    color: white;
+    background-color: #2e7d32;
+}
+
+.img {
+    height: 300px;
 }

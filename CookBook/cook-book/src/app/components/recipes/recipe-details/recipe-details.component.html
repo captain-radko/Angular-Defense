@@ -1,18 +1,15 @@
 <mat-grid-list cols="4" rowHeight="450px">
   <mat-grid-tile class="img" [colspan]="2" [rowspan]="1">
     <mat-card class="card">
-      <img mat-card-image height="500px"
-        src="https://www.seedsavers.org/site/img/seo-images/0352C-copenhagen-market-cabbage.jpg"
-        alt="Photo of a cabbage">
+      <img mat-card-image height="500px" src="{{ recipe.image }}" alt="Photo of a cabbage">
     </mat-card>
   </mat-grid-tile>
   <mat-grid-tile class="content" [colspan]="2" [rowspan]="1">
     <mat-list>
-      <mat-list-item>Item 1</mat-list-item>
+      <mat-list-item>{{ recipe.title }}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Item 2</mat-list-item>
+      <mat-list-item>{{ recipe.ingredients }}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Item 3</mat-list-item>
     </mat-list>
   </mat-grid-tile>
 </mat-grid-list>
@@ -20,7 +17,7 @@
   <mat-grid-tile>
     <mat-card class="recipe">
       <p class="text">
-        Put recipe here!
+        {{ recipe.recipeText }}
       </p>
     </mat-card>
   </mat-grid-tile>

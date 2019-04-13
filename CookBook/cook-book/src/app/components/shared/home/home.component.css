@@ -6,6 +6,35 @@
     text-shadow: -1px -1px 0 #2e7d32, 1px -1px 0 #2e7d32, -1px 1px 0 #2e7d32, 1px 1px 0 #2e7d32;
 }
 
-mat-grid-list{
+mat-grid-list {
     margin: auto auto 13%;
+}
+
+mat-divider {
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    background-color: #2e7d32;
+}
+
+.card {
+    max-width: 320px;
+}
+
+mat-card-subtitle {
+    color: black;
+}
+
+mat-card {
+    background-color: white;
+    color: black;
+}
+
+a {
+    color: white;
+    background-color: #2e7d32;
+}
+
+.img {
+    height: 300px;
 }

@@ -28,7 +28,7 @@ const routes: Routes = [
       { path: "add", component: AddRecipeComponent }
     ]
   },
-  { path: "details/:id", component: RecipeDetailsComponent, canActivate: [AuthGuard] },
+  { path: "details/:id", component: RecipeDetailsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

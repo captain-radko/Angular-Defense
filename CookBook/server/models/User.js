@@ -39,11 +39,11 @@ User.seedAdminUser = async () => {
     const salt = encryption.generateSalt();
     const hashedPass = encryption.generateHashedPassword(salt, 'Admin');
     return User.create({
-      username: 'Admin',
+      name: 'Admin',
       email: 'admin@admin.com',
       salt,
       hashedPass,
-      roles: ['Admin']
+      roles: ['Admin', 'User']
     });
   } catch (e) {
     console.log(e);

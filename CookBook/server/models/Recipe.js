@@ -20,6 +20,10 @@ const recipeSchema = new mongoose.Schema({
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    date: {
+        type: mongoose.Schema.Types.Date,
+        default: Date.now
     }
 });
 

@@ -5,7 +5,7 @@
     </mat-toolbar-row>
     <mat-card>
       <mat-form-field class="create-full-width">
-        <input matInput ngModel name="iamge" id="image" placeholder="Image URL">
+        <input matInput ngModel name="image" id="image" placeholder="Image URL">
       </mat-form-field>
       <mat-form-field class="create-full-width">
         <input matInput ngModel name="title" id="title" placeholder="Title">
@@ -14,7 +14,7 @@
         <input matInput ngModel name="ingredients" id="ingredients" placeholder="Ingredients">
       </mat-form-field>
       <mat-form-field class="create-full-width">
-        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+        <textarea matInput ngModel cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
           cdkAutosizeMaxRows="20" name="recipeText" id="recipeText" placeholder="Recipe"></textarea>
       </mat-form-field>
       <mat-card-actions class="justify">
