@@ -15,7 +15,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // component imports
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { RecipeCardComponent } from './components/recipes/recipe-card/recipe-card.component';
 import { HomeComponent } from './components/shared/home/home.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { RegisterComponent } from './components/users/register/register.component';
@@ -37,7 +36,6 @@ import { ResponseHandlerInterceptorService } from './services/interceptors/respo
   declarations: [
     AppComponent,
     NavbarComponent,
-    RecipeCardComponent,
     HomeComponent,
     FooterComponent,
     RegisterComponent,

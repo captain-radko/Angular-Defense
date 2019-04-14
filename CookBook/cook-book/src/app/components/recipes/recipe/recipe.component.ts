@@ -22,6 +22,7 @@ export class RecipeComponent implements OnInit {
 
   deleteRecipe(id) {
     this.recipeService.deleteRecipe(id).subscribe((data) => {
+      this.recipe$ = this.recipeService.getAllRecipes()
       this.userRecipes$ = this.recipeService.getUserRecipe()
     });
   }
