@@ -10,6 +10,7 @@ export class RecipeService {
   private readonly getUserUrl = 'http://localhost:5000/recipe/all/recipes/mine';
   private readonly addUrl = 'http://localhost:5000/recipe/all/add';
   private readonly detailsUrl = 'http://localhost:5000/recipe/details/';
+  private readonly deleteUrl = 'http://localhost:5000/recipe/delete/';
 
 
   constructor(
@@ -34,5 +35,9 @@ export class RecipeService {
 
   getLatest(): Observable<Array<IRecipe>> {
     return this.http.get<Array<IRecipe>>(this.getLatestUrl);
+  }
+
+  deleteRecipe(id){
+    return this.http.delete(this.deleteUrl + id);
   }
 }

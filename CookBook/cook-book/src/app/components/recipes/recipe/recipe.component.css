@@ -20,6 +20,16 @@ a {
     background-color: #2e7d32;
 }
 
+.remove {
+    color: white;
+    background-color: #f44336;
+}
+
+.edit {
+    color: white;
+    background-color: #ff9800;
+}
+
 .img {
     height: 300px;
 }

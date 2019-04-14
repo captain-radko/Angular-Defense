@@ -23,9 +23,9 @@ const routes: Routes = [
     ]
   },
   {
-    path: "all", component: AllRecipesComponent, canActivate: [AuthGuard], children: [
+    path: "all", component: AllRecipesComponent, children: [
       { path: "recipes", component: RecipeComponent },
-      { path: "add", component: AddRecipeComponent }
+      { path: "add", component: AddRecipeComponent, canActivate: [AuthGuard], }
     ]
   },
   { path: "details/:id", component: RecipeDetailsComponent },

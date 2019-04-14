@@ -10,13 +10,14 @@
             </mat-card-header>
             <mat-card-actions>
               <a [routerLink]="['/details', recipe._id]" mat-button>Details</a>
+              <a *ngIf="authService.isAdmin()" (click)="deleteRecipe(recipe._id)" class="remove" mat-button>Delete</a>
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>
       </div>
     </mat-grid-list>
   </mat-tab>
-  <mat-tab label="My Recipes">
+  <mat-tab *ngIf="authService.isAuthenticated()" label="My Recipes">
     <mat-grid-list cols="5" rowHeight="450px">
       <div *ngFor="let recipe of userRecipes$ | async">
         <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -27,6 +28,8 @@
             </mat-card-header>
             <mat-card-actions>
               <a [routerLink]="['/details', recipe._id]" mat-button>Details</a>
+              <a (click)="deleteRecipe(recipe._id)" class="remove" mat-button>Delete</a>
+              <a class="edit" mat-button>Delete</a>
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>

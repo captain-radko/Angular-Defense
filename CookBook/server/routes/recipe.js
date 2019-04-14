@@ -69,7 +69,7 @@ router.post('/all/add', authCheck, (req, res) => {
     })
 })
 
-router.get('/all/recipes', authCheck, (req, res) => {
+router.get('/all/recipes', (req, res) => {
   Recipe.find({})
     .then((recipe) => {
       return res.status(200).json(recipe)
@@ -111,6 +111,36 @@ router.get('/details/:id', (req, res) => {
         recipeText: recipe.recipeText,
       }
       res.status(200).json(response)
+    })
+})
+
+router.delete('/delete/:id', authCheck, (req, res) => {
+  const id = req.params.id
+  const user = req.user._id
+
+  Recipe.findById(id)
+    .then((recipe) => {
+      if (!recipe) {
+        return res.status(200).json({
+          success: false,
+          message: 'Recipe does not exists!'
+        })
+      }
+
+      if ((recipe.creator.toString() != user && !req.user.roles.includes("Admin"))) {
+        return res.status(401).json({
+          success: false,
+          message: 'Unauthorized!'
+        })
+      }
+
+      Recipe.findByIdAndDelete(id)
+        .then(() => {
+          return res.status(200).json({
+            success: true,
+            message: 'Recipe deleted successfully!'
+          })
+        })
     })
 })
 
