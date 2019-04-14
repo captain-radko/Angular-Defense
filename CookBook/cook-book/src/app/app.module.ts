@@ -31,6 +31,7 @@ import { JwtInterceptorService } from './services/interceptors/jwt-interceptor.s
 import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
 import { AllRecipesComponent } from './components/recipes/all-recipes/all-recipes.component';
 import { RecipeService } from './services/recipe-crud.service';
+import { ResponseHandlerInterceptorService } from './services/interceptors/response-handler-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,11 @@ import { RecipeService } from './services/recipe-crud.service';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseHandlerInterceptorService,
       multi: true
     }
   ],

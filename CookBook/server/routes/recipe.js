@@ -30,7 +30,7 @@ function validateRecipeForm(payload) {
   }
 
   if (!isFormValid) {
-    message = 'Check the form for errors.'
+    message = 'All fields are required'
   }
 
   return {
