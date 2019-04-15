@@ -31,6 +31,7 @@ import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.c
 import { AllRecipesComponent } from './components/recipes/all-recipes/all-recipes.component';
 import { RecipeService } from './services/recipe-crud.service';
 import { ResponseHandlerInterceptorService } from './services/interceptors/response-handler-interceptor.service';
+import { EditRecipeComponent } from './components/recipes/edit-recipe/edit-recipe.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ResponseHandlerInterceptorService } from './services/interceptors/respo
     RecipeComponent,
     RecipeDetailsComponent,
     AddRecipeComponent,
-    AllRecipesComponent
+    AllRecipesComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,

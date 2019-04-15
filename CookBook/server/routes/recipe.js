@@ -144,4 +144,33 @@ router.delete('/delete/:id', authCheck, (req, res) => {
     })
 })
 
+router.put('/all/edit/:id', authCheck, (req, res) => {
+  const id = req.params.id;
+  const recipe = req.body;
+
+  if (!recipe) {
+    return res.status(404).json({
+      success: false,
+      message: 'Recipe does not exists!'
+    })
+  }
+
+  const validationResult = validateRecipeForm(recipe)
+  if (!validationResult.success) {
+    return res.status(400).json({
+      success: false,
+      message: validationResult.message,
+      errors: validationResult.errors
+    })
+  }
+
+  Recipe.findByIdAndUpdate(id, recipe)
+    .then(() => {
+      return res.status(200).json({
+        success: true,
+        message: 'Recipe edited successfully!'
+      })
+    })
+})
+
 module.exports = router

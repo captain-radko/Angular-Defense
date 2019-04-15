@@ -1,0 +1,40 @@
+.edit-form {
+    margin: 5% auto 15%;
+    width: 40%;
+    padding: 10px;
+    min-width: 150px;
+    max-width: 500px;
+}
+
+.edit-full-width {
+    width: 100%;
+}
+
+.toolbar {
+    justify-content: center;
+    background-color: #2e7d32;
+    color: white
+}
+
+.edit {
+    background-color: #2e7d32;
+    color: white;
+}
+
+#recipeText {
+    resize: none;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+p {
+    text-align: center;
+}
+
+mat-card-actions {
+    align-content: center;
+    text-align: center;
+}

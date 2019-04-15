@@ -1,0 +1,25 @@
+<div class="edit-form">
+  <form #editForm="ngForm" (ngSubmit)="edit()">
+    <mat-toolbar-row class="toolbar">
+      <h1 class="mat-typography">Edit Recipe</h1>
+    </mat-toolbar-row>
+    <mat-card>
+      <mat-form-field class="edit-full-width">
+        <input matInput ngModel name="image" id="image" placeholder="Image URL">
+      </mat-form-field>
+      <mat-form-field class="edit-full-width">
+        <input matInput ngModel name="title" id="title" placeholder="Title">
+      </mat-form-field>
+      <mat-form-field class="edit-full-width">
+        <input matInput ngModel name="ingredients" id="ingredients" placeholder="Ingredients">
+      </mat-form-field>
+      <mat-form-field class="edit-full-width">
+        <textarea matInput ngModel cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="20" name="recipeText" id="recipeText" placeholder="Recipe"></textarea>
+      </mat-form-field>
+      <mat-card-actions class="justify">
+        <button type="submit" mat-button class="edit">Edit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

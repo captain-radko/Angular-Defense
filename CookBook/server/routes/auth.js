@@ -4,7 +4,7 @@ const validator = require('validator')
 
 const router = new express.Router()
 
-function validateSignupForm (payload) {
+function validateSignupForm(payload) {
   const errors = {}
   let isFormValid = true
   let message = ''
@@ -35,7 +35,7 @@ function validateSignupForm (payload) {
   }
 }
 
-function validateLoginForm (payload) {
+function validateLoginForm(payload) {
   const errors = {}
   let isFormValid = true
   let message = ''
@@ -75,7 +75,7 @@ router.post('/user/register', (req, res, next) => {
     if (err) {
       return res.status(401).json({
         success: false,
-        message: err
+        message: err.errors.message
       })
     }
 
@@ -111,7 +111,7 @@ router.post('/user/login', (req, res, next) => {
         message: 'Could not process the form.'
       })
     }
-    
+
     return res.json({
       success: true,
       message: 'You have successfully logged in!',
