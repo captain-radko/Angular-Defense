@@ -44,3 +44,7 @@ mat-card-actions {
 p {
   text-align: center;
 }
+
+:disabled{
+  background-color: gray;
+}

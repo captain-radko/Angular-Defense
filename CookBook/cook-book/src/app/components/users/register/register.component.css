@@ -21,7 +21,7 @@
   color: white;
 }
 
-.login{
+.login {
   background-color: white;
   color: black;
 }
@@ -37,4 +37,8 @@ p {
 mat-card-actions {
   align-content: center;
   text-align: center;
+}
+
+:disabled {
+  background-color: gray;
 }

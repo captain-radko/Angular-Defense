@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -11,12 +11,24 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   @ViewChild('registerForm') registerForm: NgForm;
 
+  registerFormValidator: FormGroup;
+
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.registerFormValidator = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(16)]),
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(16)])
+    });
+  }
+
+  public hasError = (controlName: string, errorName: string) => {
+    return this.registerFormValidator.controls[controlName].hasError(errorName);
   }
 
   signUp() {

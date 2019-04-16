@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 // module imports
 import { MaterialModule } from "./modules/material.module";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from "ngx-toastr";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -56,7 +56,8 @@ import { EditRecipeComponent } from './components/recipes/edit-recipe/edit-recip
     MaterialModule,
     FormsModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,

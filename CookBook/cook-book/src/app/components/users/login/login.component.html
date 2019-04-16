@@ -1,17 +1,22 @@
 <div class="login-form">
-  <form #loginForm="ngForm" (ngSubmit)="signIn()">
+  <form [formGroup]="loginFormValidator" #loginForm="ngForm" (ngSubmit)="signIn()">
     <mat-toolbar-row class="toolbar">
       <h1 class="mat-typography">Login</h1>
     </mat-toolbar-row>
     <mat-card>
       <mat-form-field class="login-full-width">
-        <input matInput ngModel id="email" name="email" placeholder="Email">
+        <input matInput ngModel id="email" formControlName="email" placeholder="Email">
+        <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="hasError('email', 'email')">Provide a valid email!</mat-error>
       </mat-form-field>
       <mat-form-field class="login-full-width">
-        <input matInput ngModel id="password" name="password" type="password" placeholder="Password">
+        <input matInput ngModel id="password" formControlName="password" type="password" placeholder="Password">
+        <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+        <mat-error *ngIf="hasError('password', 'minlength')">Password minimum length is 4 characters</mat-error>
+        <mat-error *ngIf="hasError('password', 'maxlength')">Password maximum length is 16 characters</mat-error>
       </mat-form-field>
       <mat-card-actions class="justify">
-        <button type="submit" mat-button class="login">Login</button>
+        <button type="submit" [disabled]="!loginFormValidator.valid" mat-button class="login">Login</button>
       </mat-card-actions>
       <p>Don't have an account? <button class="register" mat-button routerLink="/user/register">Register</button></p>
     </mat-card>

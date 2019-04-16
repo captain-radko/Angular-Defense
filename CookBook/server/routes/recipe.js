@@ -11,7 +11,7 @@ function validateRecipeForm(payload) {
 
   if (!payload || typeof payload.image !== 'string') {
     isFormValid = false
-    errors.image = 'Provide a valid image'
+    errors.image = 'Please provide a valid image'
   }
 
   if (!payload || typeof payload.title !== 'string') {

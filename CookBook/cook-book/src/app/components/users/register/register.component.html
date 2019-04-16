@@ -1,23 +1,34 @@
 <div class="register-form">
-  <form #registerForm="ngForm" (ngSubmit)="signUp()">
+  <form [formGroup]="registerFormValidator" #registerForm="ngForm" (ngSubmit)="signUp()">
     <mat-toolbar-row class="toolbar">
       <h1 class="mat-typography">Register</h1>
     </mat-toolbar-row>
     <mat-card>
       <mat-form-field class="register-full-width">
-        <input matInput ngModel name="name" id="name" placeholder="Username">
+        <input matInput ngModel formControlName="name" id="name" placeholder="Username">
+        <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+        <mat-error *ngIf="hasError('name', 'minlength')">Name minimum length is 4 characters</mat-error>
+        <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 15 characters</mat-error>
       </mat-form-field>
       <mat-form-field class="register-full-width">
-        <input matInput ngModel name="email" id="email" placeholder="Email">
+        <input matInput ngModel formControlName="email" id="email" placeholder="Email">
+        <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="hasError('email', 'email')">Provide a valid email!</mat-error>
       </mat-form-field>
       <mat-form-field class="register-full-width">
-        <input matInput ngModel name="password" id="password" type="password" placeholder="Password">
+        <input matInput ngModel formControlName="password" id="password" type="password" placeholder="Password">
+        <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+        <mat-error *ngIf="hasError('password', 'minlength')">Password minimum length is 4 characters</mat-error>
+        <mat-error *ngIf="hasError('password', 'maxlength')">Password maximum length is 16 characters</mat-error>
       </mat-form-field>
       <mat-form-field class="register-full-width">
-        <input matInput type="password" placeholder="Confirm Password">
+        <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm Password">
+        <mat-error *ngIf="hasError('confirmPassword', 'required')">Confirm Password is required</mat-error>
+        <mat-error *ngIf="hasError('confirmPassword', 'minlength')">Password minimum length is 4 characters</mat-error>
+        <mat-error *ngIf="hasError('confirmPassword', 'maxlength')">Password maximum length is 16 characters</mat-error>
       </mat-form-field>
       <mat-card-actions class="justify">
-        <button type="submit" mat-button class="register">Register</button>
+        <button type="submit" [disabled]="!registerFormValidator.valid" mat-button class="register">Register</button>
       </mat-card-actions>
       <p>Have an account? <button class="login" mat-button routerLink="/user/login">Login</button></p>
     </mat-card>
