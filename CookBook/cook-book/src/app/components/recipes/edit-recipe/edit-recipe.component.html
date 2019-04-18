@@ -1,24 +1,32 @@
 <div class="edit-form">
-  <form #editForm="ngForm" (ngSubmit)="edit()">
+  <form [formGroup]="editRecipeValidator" #editForm="ngForm" (ngSubmit)="edit()">
     <mat-toolbar-row class="toolbar">
       <h1 class="mat-typography">Edit Recipe</h1>
     </mat-toolbar-row>
     <mat-card>
       <mat-form-field class="edit-full-width">
-        <input matInput ngModel name="image" id="image" placeholder="Image URL">
+        <input matInput ngModel formControlName="image" id="image" placeholder="Image URL">
+        <mat-error *ngIf="hasError('image', 'required')">Image is required</mat-error>
       </mat-form-field>
       <mat-form-field class="edit-full-width">
-        <input matInput ngModel name="title" id="title" placeholder="Title">
+        <input matInput ngModel formControlName="title" id="title" placeholder="Title">
+        <mat-error *ngIf="hasError('title', 'required')">Title is required</mat-error>
+        <mat-error *ngIf="hasError('title', 'minlength')">Title minimum length is 4 characters</mat-error>
+        <mat-error *ngIf="hasError('title', 'maxlength')">Title maximum length is 16 characters</mat-error>
       </mat-form-field>
       <mat-form-field class="edit-full-width">
-        <input matInput ngModel name="ingredients" id="ingredients" placeholder="Ingredients">
+        <input matInput ngModel formControlName="ingredients" id="ingredients" placeholder="Ingredients">
+        <input matInput ngModel formControlName="ingredients" id="ingredients" placeholder="Ingredients">
+        <mat-error *ngIf="hasError('ingredients', 'required')">Ingredients are required</mat-error>
+        <mat-error *ngIf="hasError('ingredients', 'minlength')">Ingredients minimum length is 4 characters</mat-error>
       </mat-form-field>
       <mat-form-field class="edit-full-width">
         <textarea matInput ngModel cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-          cdkAutosizeMaxRows="20" name="recipeText" id="recipeText" placeholder="Recipe"></textarea>
+          cdkAutosizeMaxRows="20" formControlName="recipeText" id="recipeText" placeholder="Recipe"></textarea>
+        <mat-error *ngIf="hasError('recipeText', 'required')">Recipe is required</mat-error>
       </mat-form-field>
       <mat-card-actions class="justify">
-        <button type="submit" mat-button class="edit">Edit</button>
+        <button [disabled]="!editRecipeValidator.valid" type="submit" mat-button class="edit">Edit</button>
       </mat-card-actions>
     </mat-card>
   </form>
