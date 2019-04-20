@@ -1,24 +1,13 @@
-<mat-grid-list cols="4" rowHeight="450px">
-  <mat-grid-tile class="img" [colspan]="2" [rowspan]="1">
-    <mat-card class="card">
-      <img mat-card-image height="500px" src="{{ recipe.image }}" alt="Photo of a cabbage">
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <h1>{{ recipe.title }}</h1>
+    </mat-card-header>
+    <img class="img" src="{{ recipe.image }}" alt="">
+    <mat-card>
+      <h2 class="center">Recipe</h2>
+      <p><strong>Products needed: </strong>{{ recipe.ingredients }}</p>
+      <p class="recipe">{{ recipe.recipeText }}</p>
     </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile class="content" [colspan]="2" [rowspan]="1">
-    <mat-list>
-      <mat-list-item>{{ recipe.title }}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{ recipe.ingredients }}</mat-list-item>
-      <mat-divider></mat-divider>
-    </mat-list>
-  </mat-grid-tile>
-</mat-grid-list>
-<mat-grid-list cols="1" rowHeight="500px">
-  <mat-grid-tile>
-    <mat-card class="recipe">
-      <p class="text">
-        {{ recipe.recipeText }}
-      </p>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+  </mat-card>
+</div>

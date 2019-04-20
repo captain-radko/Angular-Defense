@@ -1,7 +1,7 @@
 <h1 class="latest mat-h1">Latest Recipes</h1>
 <mat-divider></mat-divider>
 <mat-grid-list cols="5" rowHeight="450px">
-    <div *ngFor="let recipe of recipe$ | async">
+    <div *ngFor="let recipe of recipe$ | async | orderBy:'recipe.date':true | slice:0:5">
         <mat-grid-tile [colspan]="1" [rowspan]="1">
             <mat-card class="card">
                 <img mat-card-image class="img" src="{{ recipe.image }}" alt="Photo of a cabbage">

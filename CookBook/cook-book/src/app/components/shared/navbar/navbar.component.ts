@@ -9,6 +9,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  public user: string;
+
   constructor(
     public authService: AuthService,
     private router: Router,
@@ -16,11 +19,12 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.user = localStorage.getItem('name');
   }
 
   logout() {
     this.authService.logout();
-
+    
     this.router.navigate(['/user/login']);
     this.toastr.info("Logged out");
   }

@@ -4,4 +4,6 @@ export interface IRecipe {
     title: string;
     ingredients: [];
     recipeText: string;
+    date: string;
+    creator: string;
 };

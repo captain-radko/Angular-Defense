@@ -11,6 +11,7 @@
             <mat-card-actions>
               <a [routerLink]="['/details', recipe._id]" mat-button>Details</a>
               <a *ngIf="authService.isAdmin()" (click)="deleteRecipe(recipe._id)" class="remove" mat-button>Delete</a>
+              <a *ngIf="authService.isAdmin()" [routerLink]="['/all/edit', recipe._id]" class="edit" mat-button>Edit</a>
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>
