@@ -14,13 +14,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
 import { AllRecipesComponent } from './components/recipes/all-recipes/all-recipes.component';
 import { EditRecipeComponent } from './components/recipes/edit-recipe/edit-recipe.component';
+import { ProfileComponent } from './components/users/profile/profile.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", component: HomeComponent },
   {
     path: "user", component: UserComponent, children: [
       { path: "login", component: LoginComponent },
-      { path: "register", component: RegisterComponent }
+      { path: "register", component: RegisterComponent },
+      { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] }
     ]
   },
   {

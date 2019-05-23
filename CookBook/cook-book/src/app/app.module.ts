@@ -31,6 +31,7 @@ import { AuthService } from './services/auth.service';
 import { JwtInterceptorService } from './services/interceptors/jwt-interceptor.service';
 import { RecipeService } from './services/recipe-crud.service';
 import { ResponseHandlerInterceptorService } from './services/interceptors/response-handler-interceptor.service';
+import { ProfileComponent } from './components/users/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ResponseHandlerInterceptorService } from './services/interceptors/respo
     RecipeDetailsComponent,
     AddRecipeComponent,
     AllRecipesComponent,
-    EditRecipeComponent
+    EditRecipeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

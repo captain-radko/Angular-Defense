@@ -10,8 +10,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavbarComponent implements OnInit {
 
-  public user: string;
-
   constructor(
     public authService: AuthService,
     private router: Router,
@@ -19,7 +17,6 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = localStorage.getItem('name');
   }
 
   logout() {
