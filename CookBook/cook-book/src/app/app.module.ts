@@ -12,9 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { OrderModule } from 'ngx-order-pipe';
 
 // component imports
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/shared/home/home.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { UserComponent } from './components/users/user/user.component';
@@ -36,9 +34,7 @@ import { ProfileComponent } from './components/users/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     HomeComponent,
-    FooterComponent,
     RegisterComponent,
     LoginComponent,
     UserComponent,

@@ -7,5 +7,5 @@ body {
 }
 
 mat-sidenav-container {
-    background-color: #a5d6a7;
+    background-color: #a5d6a7 !important;
 }
