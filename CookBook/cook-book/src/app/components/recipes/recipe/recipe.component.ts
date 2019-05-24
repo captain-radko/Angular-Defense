@@ -3,6 +3,7 @@ import { IRecipe } from 'src/app/models/recipe';
 import { RecipeService } from 'src/app/services/recipe-crud.service';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recipe',
@@ -24,6 +25,7 @@ export class RecipeComponent implements OnInit {
     this.recipeService.deleteRecipe(id).subscribe((data) => {
       this.recipe$ = this.recipeService.getAllRecipes()
       this.userRecipes$ = this.recipeService.getUserRecipe()
+      shareReplay()
     });
   }
 

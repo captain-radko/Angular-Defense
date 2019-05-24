@@ -3,13 +3,17 @@
     <mat-card-header>
       <h1>{{ recipe.title }}</h1>
     </mat-card-header>
-    <img class="img" src="{{ recipe.image }}" alt="">
+    <img class="img" src="{{ recipe.image }}" alt="" />
     <mat-card>
       <h2 class="center">Recipe</h2>
       <p><strong>Products needed: </strong>{{ recipe.ingredients }}</p>
       <p class="recipe">{{ recipe.recipeText }}</p>
-      <p><strong>Date: </strong>{{ recipe.date }}</p>
-      <p><strong>Creator: </strong>{{ recipe.creator }}</p>
+      <div *ngIf="recipe.date">
+        <p><strong>Date: </strong>{{ recipe.date }}</p>
+      </div>
+      <div *ngIf="recipe.creator">
+        <p><strong>Creator: </strong>{{ recipe.creator }}</p>
+      </div>
     </mat-card>
   </mat-card>
 </div>
