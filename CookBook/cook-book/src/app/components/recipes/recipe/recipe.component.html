@@ -4,14 +4,31 @@
       <div *ngFor="let recipe of recipe$ | async">
         <mat-grid-tile [colspan]="1" [rowspan]="1">
           <mat-card class="card">
-            <img mat-card-image class="img" src="{{ recipe.image }}" alt="Photo of a cabbage">
+            <img
+              mat-card-image
+              class="img"
+              src="{{ recipe.image }}"
+              alt="Photo of a cabbage"
+            />
             <mat-card-header>
               <mat-card-title>{{ recipe.title }}</mat-card-title>
             </mat-card-header>
             <mat-card-actions>
               <a [routerLink]="['/details', recipe._id]" mat-button>Details</a>
-              <a *ngIf="authService.isAdmin()" (click)="deleteRecipe(recipe._id)" class="remove" mat-button>Delete</a>
-              <a *ngIf="authService.isAdmin()" [routerLink]="['/all/edit', recipe._id]" class="edit" mat-button>Edit</a>
+              <a
+                *ngIf="authService.isAdmin()"
+                (click)="deleteRecipe(recipe._id)"
+                class="remove"
+                mat-button
+                >Delete</a
+              >
+              <a
+                *ngIf="authService.isAdmin()"
+                [routerLink]="['/all/edit', recipe._id]"
+                class="edit"
+                mat-button
+                >Edit</a
+              >
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>
@@ -23,14 +40,24 @@
       <div *ngFor="let recipe of userRecipes$ | async">
         <mat-grid-tile [colspan]="1" [rowspan]="1">
           <mat-card class="card">
-            <img mat-card-image class="img" src="{{ recipe.image }}" alt="Photo of a cabbage">
+            <img
+              mat-card-image
+              class="img"
+              src="{{ recipe.image }}"
+              alt="Photo of a cabbage"
+            />
             <mat-card-header>
               <mat-card-title>{{ recipe.title }}</mat-card-title>
             </mat-card-header>
             <mat-card-actions>
               <a [routerLink]="['/details', recipe._id]" mat-button>Details</a>
-              <a (click)="deleteRecipe(recipe._id)" class="remove" mat-button>Delete</a>
-              <a [routerLink]="['/all/edit', recipe._id]" class="edit" mat-button>Edit</a>
+              <a (click)="question(recipe._id)" class="remove" mat-button>Delete</a>
+              <a
+                [routerLink]="['/all/edit', recipe._id]"
+                class="edit"
+                mat-button
+                >Edit</a
+              >
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>
