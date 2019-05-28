@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "cook-book"
+  "defaultProject": "cook-book",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

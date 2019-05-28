@@ -6,6 +6,8 @@ import { Observable } from "rxjs";
 import { AuthService } from "src/app/services/auth.service";
 import { shareReplay } from "rxjs/operators";
 import { MatDialog, MatDialogConfig } from "@angular/material";
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/reducers';
 
 @Component({
   selector: "app-recipe",
@@ -19,7 +21,8 @@ export class RecipeComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private recipeService: RecipeService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private store: Store<AppState>
   ) {}
 
   ngOnInit() {

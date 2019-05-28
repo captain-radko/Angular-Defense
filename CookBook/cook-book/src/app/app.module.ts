@@ -32,6 +32,12 @@ import { ResponseHandlerInterceptorService } from "./services/interceptors/respo
 import { ProfileComponent } from "./components/users/profile/profile.component";
 import { QuestionComponent } from "./components/recipes/question/question.component";
 
+//ngrx store
+import { StoreModule } from "@ngrx/store";
+import { reducers, metaReducers } from "./reducers";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { environment } from "../environments/environment";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +63,9 @@ import { QuestionComponent } from "./components/recipes/question/question.compon
     ToastrModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
-    OrderModule
+    OrderModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
     AuthService,
