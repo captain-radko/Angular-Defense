@@ -34,7 +34,6 @@ import { QuestionComponent } from "./components/recipes/question/question.compon
 
 //ngrx store
 import { StoreModule } from "@ngrx/store";
-import { reducers, metaReducers } from "./reducers";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "../environments/environment";
 
@@ -64,7 +63,7 @@ import { environment } from "../environments/environment";
     HttpClientModule,
     ReactiveFormsModule,
     OrderModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    //StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
